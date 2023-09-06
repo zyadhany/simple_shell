@@ -1,4 +1,4 @@
-#include "main.h"
+#include "s_shell.h"
 
 int main(){
     char *command = NULL;
