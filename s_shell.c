@@ -1,16 +1,22 @@
 #include "s_shell.h"
 
-int main(){
-    char *command = NULL;
+/**
+ * s_shell - oprate shell command
+ *
+ * Return: On success 0.
+ * On error, -1 is returned, and errno is set appropriately.
+ */
+int s_shell(void)
+{
+	char **command = NULL;
 
-    while (1)
-    {
-        get_Command(command);
+	_puts("s_shell$ ");
 
- 
-    }
-    
+	command = get_Command();
 
-    
-    return (0);
+	execut_Command(command);
+
+
+	freeString(command);
+	return (0);
 }
