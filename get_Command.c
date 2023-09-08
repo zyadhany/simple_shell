@@ -2,7 +2,7 @@
 
 
 /**
- * _exit - exit code in error
+ * _exitC - exit code in error
  * @str: string to free
  *
  */
@@ -21,10 +21,9 @@ void _exitC(char *str)
  */
 char **get_Command()
 {
-	int i = 0;
-
-	size_t len = 0, n;
-	char *input = NULL, s[3] = " \n";
+	int n;
+	size_t len = 0;
+	char *input = NULL, drl[3] = " \n";
 	char **command = NULL;
 
 	n = getline(&input, &len, stdin);
@@ -32,9 +31,9 @@ char **get_Command()
 	if (n == -1)
 		_exitC(input);
 
-	if (_strcnt(input, s))
+	if (_strcnt(input, drl))
 	{
-		command = _strtok(input, s);
+		command = _strtok(input, drl);
 		if (!command)
 			_exitC(input);
 	}

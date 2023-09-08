@@ -3,7 +3,8 @@
         "cmath": "cpp",
         "iostream": "cpp",
         "string.h": "c",
-        "unistd.h": "c"
+        "unistd.h": "c",
+        "s_shell.h": "c"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }

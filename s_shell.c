@@ -14,8 +14,8 @@ int s_shell(void)
 
 	command = get_Command();
 
-	execut_Command(command);
-
+	if (command)
+		execute_Command(command);
 
 	freeString(command);
 	return (0);
