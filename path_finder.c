@@ -2,16 +2,16 @@
 
 /**
  * Get_path - reblace command with it path
- * @coma: command to get path for
+ * @command: command to get path for
  *
  * Return: On success 0.
  * On error, 1.
  */
-int Get_path(char **coma)
+int Get_path(char **command)
 {
 	int index, n;
 	char var[] = "PATH",
-		 drl[4] = "=:\n",
+		 dlm[4] = "=:\n",
 		 **path = NULL;
 
 	index = _getEnvp(var);
@@ -19,10 +19,10 @@ int Get_path(char **coma)
 	if (index == -1)
 		return (1);
 
-	path = _strtok(environ[index], drl);
-	_strcpy(&path[0], *coma);
+	path = _strtok(environ[index], dlm);
+	_strcpy(&path[0], *command);
 
-	n = path_check(path, *coma);
+	n = path_check(path, *command);
 
 	if (n == -1)
 	{
@@ -30,7 +30,7 @@ int Get_path(char **coma)
 		return (1);
 	}
 
-	_strcpy(coma, path[n]);
+	_strcpy(command, path[n]);
 
 	freeString(path);
 	return (0);
@@ -62,29 +62,29 @@ int _getEnvp(char *var)
 /**
  * path_check - check which of these path is valid
  * @path: array of paths
- * @coma: command to check
+ * @command: command to check
  *
  * Return: index of valid path.
  * On error, -1.
  */
-int path_check(char **path, char *coma)
+int path_check(char **path, char *command)
 {
 	int i;
 	struct stat st;
 
-	if (!path || !coma)
+	if (!path || !command)
 		return (-1);
 
 	for (i = 1; path[i] ; i++)
 	{
 		_appendStr(&path[i], "/");
-		_appendStr(&path[i], coma);
+		_appendStr(&path[i], command);
 	}
 
-	for ( i = 0; path[i] ; i++)
+	for (i = 0; path[i] ; i++)
 		if (!stat(path[i], &st))
 			return (i);
-		
+
 	return (-1);
 }
 

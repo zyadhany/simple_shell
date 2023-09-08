@@ -9,6 +9,7 @@
  */
 int execute_Command(char **command)
 {
+	int id;
 
 	/*replace first arg with path*/
 	if (Get_path(&command[0]))
@@ -17,9 +18,12 @@ int execute_Command(char **command)
 		return (1);
 	}
 
-	printf("%s\n", command[0]);
-	
-	/*fork and start new process with execve*/
+	id = fork();
+
+	if (id == 0)
+		execve(command[0], command, environ);
+
+	wait(&id);
 
 	return (0);
 }

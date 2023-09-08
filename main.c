@@ -3,18 +3,14 @@
 
 /**
  * main - entry point
- * @argc: number of passes argument
- * @argv: array of arguments
- * @env: envitoment variables
  *
  * Return: On success 0.
  */
 
 /*int argc, char *argv[], char *env[]*/
 
-int main()
+int main(void)
 {
-
 	signal(SIGINT, SIG_IGN);
 
 	do {

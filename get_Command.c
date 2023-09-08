@@ -23,7 +23,7 @@ char **get_Command()
 {
 	int n;
 	size_t len = 0;
-	char *input = NULL, drl[3] = " \n";
+	char *input = NULL, dlm[3] = " \n";
 	char **command = NULL;
 
 	n = getline(&input, &len, stdin);
@@ -31,9 +31,9 @@ char **get_Command()
 	if (n == -1)
 		_exitC(input);
 
-	if (_strcnt(input, drl))
+	if (_strcnt(input, dlm))
 	{
-		command = _strtok(input, drl);
+		command = _strtok(input, dlm);
 		if (!command)
 			_exitC(input);
 	}

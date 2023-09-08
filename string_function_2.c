@@ -23,7 +23,6 @@ void _strcpy(char **str1, char *str2)
 
 	for (i = 0; i <= n; i++)
 		(*str1)[i] = str2[i];
-
 }
 
 /**

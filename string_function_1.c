@@ -38,11 +38,11 @@ int str_find(char *str, char c)
 /**
  * _strcnt - return number of string after break
  * @str: string to break.
- * @drl: what to break at.
+ * @dlm: what to break at.
  *
  * Return: array of strings
  */
-int _strcnt(char *str, char *drl)
+int _strcnt(char *str, char *dlm)
 {
 	int n = 0, i, at = 0;
 
@@ -51,7 +51,7 @@ int _strcnt(char *str, char *drl)
 
 	for (i = 0; str[i] ; i++)
 	{
-		if (!str_find(drl, str[i]))
+		if (!str_find(dlm, str[i]))
 			continue;
 		if (i != at)
 			n++;
@@ -67,17 +67,16 @@ int _strcnt(char *str, char *drl)
 /**
  * _strtok - break string into servrall strings
  * @str: string to be break
- * @drl: what to break in
+ * @dlm: what to break in
  *
  * Return: array of strings
  */
-char **_strtok(char *str, char *drl)
+char **_strtok(char *str, char *dlm)
 {
 	int n = 0, i, j, at = 0;
 	char **s;
 
-	n = _strcnt(str, drl);
-
+	n = _strcnt(str, dlm);
 	s = malloc(sizeof(char *) * (n + 1));
 
 	if (!s)
@@ -86,14 +85,16 @@ char **_strtok(char *str, char *drl)
 	n = 0;
 	for (i = 0; str[i] ; i++)
 	{
-		if (!str_find(drl, str[i]))
+		if (!str_find(dlm, str[i]))
 			continue;
 		if (i == at)
 		{
 			at = i + 1;
 			continue;
 		}
-		s[n] = malloc(i - at + 1);
+
+		s[n] = malloc(sizeof(char) * (i - at + 1));
+
 		if (!s[n])
 		{
 			for (j = 0; j < n; j++)
@@ -104,10 +105,12 @@ char **_strtok(char *str, char *drl)
 
 		for (j = at; j < i; j++)
 			s[n][j - at] = str[j];
+
 		s[n][j - at] = '\0';
 		n++;
 		at = i + 1;
 	}
+
 	s[n] = NULL;
 	return (s);
 }
@@ -125,10 +128,7 @@ void freeString(char **str)
 		return;
 
 	while (str[i])
-	{
-		free(str[i]);
-		i++;
-	}
+		free(str[i++]);
 
 	free(str);
 }
