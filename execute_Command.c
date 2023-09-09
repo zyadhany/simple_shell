@@ -1,17 +1,17 @@
 #include "s_shell.h"
 
 /**
- * execute_Command - execute given command
+ * execute_Command - executes a given command
  * @command: command to execute
  *
- * Return: On success 0.
+ * Return: On success, 0.
  * On error, 1.
  */
 int execute_Command(char **command)
 {
 	int id;
 
-	/*replace first arg with path*/
+	/*Replace first arg with its full path*/
 	if (Get_path(&command[0]))
 	{
 		_puts("Command not found\n");

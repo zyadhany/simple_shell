@@ -1,11 +1,9 @@
 #include "s_shell.h"
 
 /**
- * Get_path - reblace command with it path
+ * Get_path - Replaces command with its full path
  * @command: command to get path for
- *
- * Return: On success 0.
- * On error, 1.
+ * Return: On success 0. On error, 1.
  */
 int Get_path(char **command)
 {
@@ -38,10 +36,8 @@ int Get_path(char **command)
 
 /**
  * _getEnvp - get the index of enviroment variable
- * @var: var to look at
- *
- * Return: index of variable.
- * On error, -1.
+ * @var: variable to look at
+ * Return: index of variable. On error, -1.
  */
 int _getEnvp(char *var)
 {
@@ -60,12 +56,10 @@ int _getEnvp(char *var)
 }
 
 /**
- * path_check - check which of these path is valid
+ * path_check - Check which of the paths is valid
  * @path: array of paths
- * @command: command to check
- *
- * Return: index of valid path.
- * On error, -1.
+ * @command: command to look for
+ * Return: index of valid path. On error, -1.
  */
 int path_check(char **path, char *command)
 {
@@ -87,4 +81,3 @@ int path_check(char **path, char *command)
 
 	return (-1);
 }
-

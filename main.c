@@ -4,7 +4,7 @@
 /**
  * main - entry point
  *
- * Return: On success 0.
+ * Return: On success, 0.
  */
 
 /*int argc, char *argv[], char *env[]*/

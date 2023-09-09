@@ -1,10 +1,9 @@
 #include "s_shell.h"
 
 /**
- *_putchar - print char
- *@c: char to be print
- *
- * Return: 1 in success , -1 on fail.
+ * _putchar - Prints character to stdout
+ * @c: char to be print
+ * Return: 1 on success , -1 on failure
  */
 int _putchar(char c)
 {
@@ -12,9 +11,8 @@ int _putchar(char c)
 }
 
 /**
- *_puts - prints an input string
- *@str: the string to be printed
- *
+ * _puts - Prints an input string
+ * @str: the string to be printed
  * Return: Nothing
  */
 void _puts(char *str)

@@ -1,4 +1,10 @@
-Repo for Simple Shell project in ALX programme.
+Simple Shell Project : ALX SE Programme
 
-Zyad is a partner on this project.
-Sheriff is a partner on this project.
+TEAM : 2 MEMBERS
+------------------
+Zyad Hany Hany
+Sheriff Oladimeji
+
+
+MANDATORY TASKS:
+------------------

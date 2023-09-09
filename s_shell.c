@@ -1,10 +1,10 @@
 #include "s_shell.h"
 
 /**
- * s_shell - oprate shell command
+ * s_shell - Operates shell command
  *
- * Return: On success 0.
- * On error, -1 is returned, and errno is set appropriately.
+ * Return: On success, 0.
+ * On error, -1. errno is set appropriately.
  */
 int s_shell(void)
 {
