@@ -1,10 +1,9 @@
 #include "s_shell.h"
 
 /**
- * _strlen - get leanght of string.
- * @str: string to get it's lenght.
- *
- * Return: lenght of given string.
+ * _strlen - gets length of a string
+ * @str: string whose length is needed
+ * Return: length of given string.
  */
 int _strlen(char *str)
 {
@@ -18,11 +17,10 @@ int _strlen(char *str)
 }
 
 /**
- * str_find - break string into servrall strings
- * @str: string to look at
- * @c: chat want to find in string
- *
- * Return: 1 if found char, 0 otherwise.
+ * str_find - Find character(s) in a string
+ * @str: string to check
+ * @c: character to find in string
+ * Return: 1 if found, 0 otherwise.
  */
 int str_find(char *str, char c)
 {
@@ -36,10 +34,9 @@ int str_find(char *str, char c)
 }
 
 /**
- * _strcnt - return number of string after break
- * @str: string to break.
- * @dlm: what to break at.
- *
+ * _strcnt - Count number of strings after break
+ * @str: string to break
+ * @dlm: what to break at (Delimeter)
  * Return: array of strings
  */
 int _strcnt(char *str, char *dlm)
@@ -65,10 +62,9 @@ int _strcnt(char *str, char *dlm)
 }
 
 /**
- * _strtok - break string into servrall strings
+ * _strtok - breaks string into several strings
  * @str: string to be break
- * @dlm: what to break in
- *
+ * @dlm: what to break at (Delimiter)
  * Return: array of strings
  */
 char **_strtok(char *str, char *dlm)

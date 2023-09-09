@@ -1,10 +1,9 @@
 #include "s_shell.h"
 
 /**
- * _strcpy - function copy string into another
- * @str1: string to copy at.
- * @str2: string to copy from.
- *
+ * _strcpy - copies a string into another
+ * @str1: string to copy at
+ * @str2: string to copy from
  */
 void _strcpy(char **str1, char *str2)
 {
@@ -26,11 +25,10 @@ void _strcpy(char **str1, char *str2)
 }
 
 /**
- * _lcp - function calculate longest common prefix between 2 strings,
- * @str1: first string.
- * @str2: second string.
- *
- * Return: int represent lcp.
+ * _lcp - computes the longest common prefix between 2 strings
+ * @str1: first string
+ * @str2: second string
+ * Return: integer equivalent of lcp
  */
 int _lcp(char *str1, char *str2)
 {
@@ -50,11 +48,10 @@ int _lcp(char *str1, char *str2)
 }
 
 /**
- * _appendStr - function append string to the end of string,
- * @str1: string appedn to.
- * @str2: string to append.
- *
- * Return: int represent lcp.
+ * _appendStr - appends string to the end of another
+ * @str1: string append to
+ * @str2: string to append
+ * Return: Nothing
  */
 void _appendStr(char **str1, char *str2)
 {
