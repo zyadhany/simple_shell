@@ -8,5 +8,5 @@ Sheriff Oladimeji
 
 DESCRIPTION:
 ------------------
-s_shell inteprets command with it arguments, if it exits.
-
+s_shell inteprets command with its arguments/flags, if it exits.
+When command does not exist, the corresponding error is displayed
