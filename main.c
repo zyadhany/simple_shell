@@ -2,9 +2,9 @@
 
 
 /**
- * main - entry point
+ * main - Entry point
  *
- * Return: On success, 0.
+ * Return: 0 On success
  */
 
 /*int argc, __attribute__((unused))char *argv[], char *env[]*/

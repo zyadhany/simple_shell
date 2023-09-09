@@ -11,7 +11,7 @@ int s_shell(void)
 	char **command = NULL;
 
 	_puts("s_shell$ ");
-	
+
 	command = get_Command();
 
 	if (command)

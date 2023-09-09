@@ -16,7 +16,6 @@ int execute_Command(char **command)
 		freeString(command);
 		exit(1);
 	}
-	
 
 	/*Replace first arg with its full path*/
 	if (Get_path(&command[0]))
