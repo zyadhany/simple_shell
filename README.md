@@ -8,3 +8,5 @@ Sheriff Oladimeji
 
 DESCRIPTION:
 ------------------
+s_shell inteprets command with it arguments, if it exits.
+
