@@ -11,10 +11,18 @@ int execute_Command(char **command)
 {
 	int id;
 
+	if (_strcomp(command[0], "exit") == 0)
+	{
+		freeString(command);
+		exit(1);
+	}
+	
+
 	/*Replace first arg with its full path*/
 	if (Get_path(&command[0]))
 	{
-		_puts("Command not found\n");
+		_puts(command[0]);
+		_puts(": Command not found\n");
 		return (1);
 	}
 

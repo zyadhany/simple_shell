@@ -39,5 +39,6 @@ void freeString(char **str);
 void _strcpy(char **str1, char *str2);
 int _lcp(char *str1, char *str2);
 void _appendStr(char **str1, char *str2);
+int _strcomp(char *str1, char *str2);
 
 #endif

@@ -76,3 +76,27 @@ void _appendStr(char **str1, char *str2)
 	free(*str1);
 	*str1 = s;
 }
+
+/**
+ * _strcomp - compare to strings;
+ * @str1: string to copy at
+ * @str2: string to copy from
+ *
+ * Return: 0 is equal, 1 if first is bigger, -1 atherwise
+ */
+int _strcomp(char *str1, char *str2)
+{
+	int n, m, i;
+
+	n = _strlen(str1),
+	m = _strlen(str2);
+
+	for (i = 0; i < n && i < m; i++)
+		if (str1[i] != str2[i])
+			return ((str1[i] > str2[i]) * 2 - 1);
+
+	if (n == m)
+		return (0);
+
+	return ((n > m) * 2 - 1);
+}

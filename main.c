@@ -7,7 +7,7 @@
  * Return: On success, 0.
  */
 
-/*int argc, char *argv[], char *env[]*/
+/*int argc, __attribute__((unused))char *argv[], char *env[]*/
 
 int main(void)
 {
