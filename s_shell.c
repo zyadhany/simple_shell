@@ -6,17 +6,16 @@
  * Return: On success, 0.
  * On error, -1. errno is set appropriately.
  */
-int s_shell(void)
+int s_shell(struct INFO info)
 {
-	char **command = NULL;
 
 	_puts("s_shell$ ");
 
-	command = get_Command();
+	info.command = get_Command();
 
-	if (command)
-		execute_Command(command);
+	if (info.command)
+		execute_Command(info);
 
-	freeString(command);
+	freeString(info.command);
 	return (0);
 }

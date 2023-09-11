@@ -26,3 +26,33 @@ void _puts(char *str)
 		_putchar(str[i++]);
 
 }
+
+/**
+ * print_int - Prints intger
+ * @n: num to print
+ *
+ */
+void print_int(int n)
+{
+	int i;
+	char s[32];
+
+	if (n == 0)
+	{
+		s[0] = '0', i = 1;
+	}
+	else
+	{
+		for (i = 0; n; i++)
+		{
+			s[i] = '0' + n % 10;
+			n /= 10;
+		}
+	}
+
+	s[i] = '\0';
+
+	_reverse(s);
+
+	_puts(s);
+}

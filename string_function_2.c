@@ -100,3 +100,23 @@ int _strcomp(char *str1, char *str2)
 
 	return ((n > m) * 2 - 1);
 }
+
+
+/**
+ * _reverse - reverse string;
+ * @s: string to be reversed.
+ *
+ */
+void _reverse(char *s)
+{
+	int n, i, tmp;
+
+	n = _strlen(s);
+
+	for (i = 0; i < n / 2; i++)
+	{
+		tmp = s[i];
+		s[i] = s[n - 1 - i];
+		s[n - 1 - i] = tmp;
+	}
+}
