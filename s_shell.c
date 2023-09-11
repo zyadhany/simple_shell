@@ -1,10 +1,9 @@
 #include "s_shell.h"
 
 /**
- * s_shell - Operates shell command
- *
- * Return: On success, 0.
- * On error, -1. errno is set appropriately.
+ * s_shell - carries out shell coomand operations
+ * Return: On success, 0
+ * On error, -1. errno is set appropriately
  */
 int s_shell(struct INFO info)
 {

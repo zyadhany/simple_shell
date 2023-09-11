@@ -3,7 +3,6 @@
 /**
  * execute_Command - executes a given command
  * @command: command to execute
- *
  * Return: On success, 0.
  * On error, 1.
  */
@@ -17,7 +16,7 @@ int execute_Command(struct INFO info)
 		exit(1);
 	}
 
-	/*Replace first arg with its full path*/
+	/*Replace first argument with its full path*/
 	if (Get_path(&info.command[0]))
 	{
 		_puts(info.argv[0]);

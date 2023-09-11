@@ -10,9 +10,14 @@
 #include <sys/wait.h>
 #include <unistd.h>
 
+#define BUFFER_SIZE 1024
 
-
-
+/**
+ * struct INFO - structure of command details
+ * @command_count: position of command entry
+ * @command: command entered
+ * @argv: name of the program
+*/
 struct INFO
 {
 	u_int64_t command_count;

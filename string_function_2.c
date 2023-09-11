@@ -1,7 +1,7 @@
 #include "s_shell.h"
 
 /**
- * _strcpy - copies a string into another
+ * _strcpy - copies a certain string into another
  * @str1: string to copy at
  * @str2: string to copy from
  */
@@ -78,11 +78,10 @@ void _appendStr(char **str1, char *str2)
 }
 
 /**
- * _strcomp - compare to strings;
- * @str1: string to copy at
- * @str2: string to copy from
- *
- * Return: 0 is equal, 1 if first is bigger, -1 atherwise
+ * _strcomp - compares two strings;
+ * @str1: first string to consider
+ * @str2: second string to consider
+ * Return: 0 if equal, 1 if first is bigger, -1 otherwise
  */
 int _strcomp(char *str1, char *str2)
 {
@@ -103,9 +102,8 @@ int _strcomp(char *str1, char *str2)
 
 
 /**
- * _reverse - reverse string;
- * @s: string to be reversed.
- *
+ * _reverse - reverses a given string;
+ * @s: string to be reversed
  */
 void _reverse(char *s)
 {

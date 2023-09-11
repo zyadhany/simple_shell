@@ -1,7 +1,7 @@
 #include "s_shell.h"
 
 /**
- * _putchar - Prints character to stdout
+ * _putchar - prints character to stdout
  * @c: char to be print
  * Return: 1 on success , -1 on failure
  */
@@ -11,7 +11,7 @@ int _putchar(char c)
 }
 
 /**
- * _puts - Prints an input string
+ * _puts - prints an input string
  * @str: the string to be printed
  * Return: Nothing
  */
@@ -28,9 +28,8 @@ void _puts(char *str)
 }
 
 /**
- * print_int - Prints intger
- * @n: num to print
- *
+ * print_int - prints an integer
+ * @n: integer to print
  */
 void print_int(int n)
 {

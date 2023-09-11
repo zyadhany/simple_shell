@@ -17,7 +17,7 @@ int _strlen(char *str)
 }
 
 /**
- * str_find - Find character(s) in a string
+ * str_find - finds character(s) in a string
  * @str: string to check
  * @c: character to find in string
  * Return: 1 if found, 0 otherwise.
@@ -34,7 +34,7 @@ int str_find(char *str, char c)
 }
 
 /**
- * _strcnt - Count number of strings after break
+ * _strcnt - counts number of strings after break
  * @str: string to break
  * @dlm: what to break at (Delimeter)
  * Return: array of strings
@@ -112,7 +112,7 @@ char **_strtok(char *str, char *dlm)
 }
 
 /**
- * freeString - free array of strings
+ * freeString - frees an array of strings
  * @str: string to free
  *
  */

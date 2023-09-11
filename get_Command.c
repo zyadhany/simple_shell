@@ -2,7 +2,7 @@
 
 
 /**
- * _exitC - Exit code on error
+ * _exitC - exit code on error
  * @str: string to free
  * Return: Nothing
  */
@@ -14,7 +14,7 @@ void _exitC(char *str)
 }
 
 /**
- * get_Command - Function that gets input from user
+ * get_Command - gets input from user
  * and separates it into several commands
  * or Command and flags/arguments
  *
