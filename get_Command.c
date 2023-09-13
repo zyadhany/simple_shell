@@ -9,7 +9,8 @@
 void _exitC(char *str)
 {
 	free(str);
-	_putchar('\n');
+	if (isatty(fileno(stdin)))
+		_putchar('\n');
 	exit(info.status);
 }
 

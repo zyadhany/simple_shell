@@ -8,7 +8,8 @@
  */
 int s_shell(void)
 {
-	_puts(PROMPT);
+	if (isatty(fileno(stdin)))
+		_puts(PROMPT);
 
 	info.command = get_Command();
 
