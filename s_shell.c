@@ -2,18 +2,19 @@
 
 /**
  * s_shell - carries out shell coomand operations
+ *
  * Return: On success, 0
  * On error, -1. errno is set appropriately
  */
-int s_shell(struct INFO info)
+int s_shell(void)
 {
-
-	_puts("s_shell$ ");
+	_puts(PROMPT);
 
 	info.command = get_Command();
 
 	if (info.command)
-		execute_Command(info);
+		info.status = execute_Command();
+
 
 	freeString(info.command);
 	return (0);

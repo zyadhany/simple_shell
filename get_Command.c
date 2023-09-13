@@ -10,7 +10,7 @@ void _exitC(char *str)
 {
 	free(str);
 	_putchar('\n');
-	exit(1);
+	exit(info.status);
 }
 
 /**
@@ -20,7 +20,7 @@ void _exitC(char *str)
  *
  * Return: array of strings.
  */
-char **get_Command()
+char **get_Command(void)
 {
 	int n;
 	size_t len = 0;

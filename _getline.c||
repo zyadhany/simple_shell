@@ -1,9 +1,11 @@
+
 /*
 Betty problems I tried to fix to no avail:
 More than 40 lines of code
 DOS line endings
 Trailing white space
 */
+
 #include "s_shell.h"
 /**
  * _getline - gets input from user

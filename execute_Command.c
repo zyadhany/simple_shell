@@ -2,30 +2,24 @@
 
 /**
  * execute_Command - executes a given command
- * @command: command to execute
  * Return: On success, 0.
  * On error, 1.
  */
-int execute_Command(struct INFO info)
+int execute_Command(void)
 {
-	int id;
+	int id, i;
+	char *error_message[3] = {"not found", NULL};
 
-	if (_strcomp(info.command[0], "exit") == 0)
-	{
-		freeString(info.command);
-		exit(1);
-	}
+	for (i = 0; info.functions[i].name; i++)
+		if (_strcomp(info.command[0], info.functions[i].name) == 0)
+			return (info.functions[i].func());
+
 
 	/*Replace first argument with its full path*/
 	if (Get_path(&info.command[0]))
 	{
-		_puts(info.argv[0]);
-		_puts(": ");
-		print_int(info.command_count);
-		_puts(": ");
-		_puts(info.command[0]);
-		_puts(": not found\n");
-		return (1);
+		command_error(error_message);
+		return (127);
 	}
 
 	id = fork();
