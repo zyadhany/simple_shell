@@ -41,15 +41,19 @@ int Get_path(char **command)
  */
 int _getEnvp(char *var)
 {
-	int n, i, j;
+	int n, i = 0, j;
+	list_t *tmp = info.envp;
 
 	n = _strlen(var);
 
-	for (i = 0; environ[i] ; i++)
+	while (tmp)
 	{
-		j = _lcp(environ[i], var);
-		if (j == n && environ[i][j] == '=')
-			return (i);
+		j = _lcp(tmp->str, var);
+		if (j == n)
+			if (tmp->str[j] == '=')
+				return (i);
+		i++;
+		tmp = tmp->next;
 	}
 
 	return (-1);
