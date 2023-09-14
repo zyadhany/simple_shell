@@ -78,7 +78,7 @@ void _appendStr(char **str1, char *str2)
 }
 
 /**
- * _strcomp - compares two strings;
+ * _strcomp - compares two strings
  * @str1: first string to consider
  * @str2: second string to consider
  * Return: 0 if equal, 1 if first is bigger, -1 otherwise
