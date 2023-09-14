@@ -18,6 +18,12 @@ extern struct INFO info;
 #define BUFFER_SIZE 1024
 
 
+typedef struct List
+{
+	char *str;
+	struct List *next;
+} list_t;
+
 
 struct function
 {
@@ -44,8 +50,10 @@ struct INFO
 	struct function functions[5];
 
 	int status;
+
+	struct LIST *envp;
 };
-#define INFO_INIT { 1, NULL, 0, NULL, {{NULL, NULL}}, 0}
+#define INFO_INIT { 1, NULL, 0, NULL, {{NULL, NULL}}, 0, NULL}
 
 
 
@@ -72,6 +80,12 @@ int _Myunsetenv(void);
 int _putchar(char c);
 void _puts(char *str);
 void print_int(int n);
+
+/* List Functions */
+size_t list_len(const list_t *lis);
+list_t *add_node(list_t **lis, char *s);
+int delete_node_at_index(list_t **lis, int k);
+void free_list(list_t *lis);
 
 /* Int Functons */
 int _isInt(char *s);
