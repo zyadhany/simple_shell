@@ -4,13 +4,17 @@
 /**
  * set_envp - add envirnoment variables to the info.
  *
+ * Return: 0 at sucess, -1 fail.
  */
-void set_envp(void)
+int set_envp(void)
 {
 	int i;
 
 	for (i = 0; environ[i]; i++)
-		info.envp = add_node(&info.envp, environ[i]);
+		if (!add_node(&info.envp, environ[i]))
+			return (-1);
+
+	return (0);
 }
 
 
@@ -32,10 +36,13 @@ int _setenv(char *var, char *value)
 		return (1);
 	_appendStr(&env_var, "=");
 	_appendStr(&env_var, value);
-
-	/* add node */
-
+	if (!add_node(&info.envp, env_var))
+	{
+		free(env_var);
+		return (1);
+	}
 	free(env_var);
+
 	return (0);
 }
 
@@ -63,7 +70,12 @@ int _Mysetenv(void)
  */
 int _unsetenv(char *var)
 {
-	_puts(var);
+	int index = _getEnvp(var);
+
+	if (index == -1)
+		return (1);
+
+	delete_node_at_index(&info.envp, index);
 
 	return (0);
 }
@@ -75,7 +87,10 @@ int _unsetenv(char *var)
  */
 int _Myunsetenv(void)
 {
-	_puts("HI\n");
+	int i;
+
+	for (i = 1; info.command[i]; i++)
+		_unsetenv(info.command[i]);
 
 	return (0);
 }

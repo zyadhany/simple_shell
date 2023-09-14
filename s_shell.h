@@ -41,19 +41,22 @@ struct function
 struct INFO
 {
 	u_int64_t command_count;
-
-	char **command;
+	int status;
 
 	int argc;
 	char **argv;
+	char **command;
 
-	struct function functions[5];
+	int buffer_index;
+	char *buffer;
 
-	int status;
+	struct function functions[6];
 
 	list_t *envp;
+
+	int exit;
 };
-#define INFO_INIT { 1, NULL, 0, NULL, {{NULL, NULL}}, 0, NULL}
+#define INFO_INIT { 1, 0, 0, NULL, NULL, 0, NULL, {{NULL, NULL}}, NULL, 0}
 
 
 
@@ -62,26 +65,37 @@ int s_shell(void);
 char **get_Command(void);
 int execute_Command(void);
 int Get_path(char **coma);
-int _getEnvp(char *var);
 int path_check(char **path, char *coma);
 
 /*Shell Functions*/
-void FreeInfo(void);
-void set_fuction(void);
+/*1*/
+int set_info(void);
+int set_fuction(void);
+int set_buffer(void);
 void command_error(char *error_massage[]);
+void FreeInfo(void);
+/*2*/
+int _cd(void);
+int Buff_Flush(void);
+void _exitS(void);
 int _exitShell(void);
 
 /* enviroment functions */
-void set_envp(void);
+/*1*/
+int set_envp(void);
 int _setenv(char *var, char *value);
 int _Mysetenv(void);
 int _unsetenv(char *var);
 int _Myunsetenv(void);
+/*2*/
+int _getEnvp(char *var);
+int _envp(void);
 
 /*Print functions*/
 int _putchar(char c);
 void _puts(char *str);
 void print_int(int n);
+int _getline(char **lineptr, int *len, int fd);
 
 /* List Functions */
 /*1*/

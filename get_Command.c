@@ -1,20 +1,6 @@
 #include "s_shell.h"
 
 
-/**
- * _exitC - exit code on error
- * @str: string to free
- * Return: Nothing
- */
-void _exitC(char *str)
-{
-	if (isatty(fileno(stdin)))
-		_putchar('\n');
-
-	free(str);
-	FreeInfo();
-	exit(info.status);
-}
 
 /**
  * get_Command - gets input from user
@@ -25,24 +11,28 @@ void _exitC(char *str)
  */
 char **get_Command(void)
 {
-	int n;
-	size_t len = 0;
-	char *input = NULL, dlm[3] = " \n";
+	int n, len;
+	char *input = NULL, dlm[3] = " \n\0";
 	char **command = NULL;
 
-	n = getline(&input, &len, stdin);
+	n = _getline(&input, &len, 0);
 
 	if (n == -1)
-		_exitC(input);
+	{
+		free(input);
+		_exitS();
+	}
 
 	if (_strcnt(input, dlm))
 	{
 		command = _strtok(input, dlm);
 		if (!command)
-			_exitC(input);
+		{
+			free(input);
+			_exitS();
+		}
 	}
 
 	free(input);
 	return (command);
 }
-

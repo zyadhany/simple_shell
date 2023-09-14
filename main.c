@@ -1,9 +1,6 @@
 #include "s_shell.h"
 
 
-int main(int argc, char *argv[]);
-struct INFO info = INFO_INIT;
-
 /**
  * main - Entry point
  * @argc: number of argument
@@ -13,10 +10,9 @@ struct INFO info = INFO_INIT;
  */
 int main(int argc, char *argv[])
 {
+	set_info();
 	info.argv = argv;
 	info.argc = argc;
-	set_fuction();
-	set_envp();
 
 	signal(SIGINT, SIG_IGN);
 

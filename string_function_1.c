@@ -24,9 +24,11 @@ int _strlen(char *str)
  */
 int str_find(char *str, char c)
 {
-	int i;
+	int n, i;
 
-	for (i = 0; str[i] ; i++)
+	n = strlen(str);
+
+	for (i = 0; i <= n; i++)
 		if (str[i] == c)
 			return (1);
 
@@ -69,17 +71,15 @@ int _strcnt(char *str, char *dlm)
  */
 char **_strtok(char *str, char *dlm)
 {
-	int n = 0, i, j, at = 0;
+	int n = 0, len = _strlen(str), i, j, at = 0;
 	char **s;
 
-	n = _strcnt(str, dlm);
-	s = malloc(sizeof(char *) * (n + 1));
+	s = malloc(sizeof(char *) * (_strcnt(str, dlm) + 1));
 
 	if (!s)
 		return (NULL);
 
-	n = 0;
-	for (i = 0; str[i] ; i++)
+	for (i = 0; i <= len; i++)
 	{
 		if (!str_find(dlm, str[i]))
 			continue;
@@ -93,9 +93,7 @@ char **_strtok(char *str, char *dlm)
 
 		if (!s[n])
 		{
-			for (j = 0; j < n; j++)
-				free(s[j]);
-			free(s);
+			freeString(s);
 			return (NULL);
 		}
 

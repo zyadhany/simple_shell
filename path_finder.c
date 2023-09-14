@@ -34,30 +34,6 @@ int Get_path(char **command)
 	return (0);
 }
 
-/**
- * _getEnvp - get the index of enviroment variable
- * @var: variable to look at
- * Return: index of variable. On error, -1.
- */
-int _getEnvp(char *var)
-{
-	int n, i = 0, j;
-	list_t *tmp = info.envp;
-
-	n = _strlen(var);
-
-	while (tmp)
-	{
-		j = _lcp(tmp->str, var);
-		if (j == n)
-			if (tmp->str[j] == '=')
-				return (i);
-		i++;
-		tmp = tmp->next;
-	}
-
-	return (-1);
-}
 
 /**
  * path_check - Check which of the paths is valid

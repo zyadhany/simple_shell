@@ -57,10 +57,10 @@ list_t *add_node(list_t **lis, char *s)
 {
 	list_t *tmp = malloc(sizeof(list_t)), *at = *lis;
 
-
 	if (!tmp)
 		return (NULL);
 
+	tmp->str = NULL;
 	_strcpy(&tmp->str, s);
 	tmp->next = NULL;
 
