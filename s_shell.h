@@ -84,11 +84,14 @@ void _puts(char *str);
 void print_int(int n);
 
 /* List Functions */
+/*1*/
 size_t print_list(const list_t *lis);
 size_t list_len(const list_t *lis);
 list_t *add_node(list_t **lis, char *s);
 int delete_node_at_index(list_t **lis, int k);
 void free_list(list_t *lis);
+/*2*/
+char *get_node(listint_t *lis, int k);
 
 /* Int Functons */
 int _isInt(char *s);
