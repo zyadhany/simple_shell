@@ -2,7 +2,7 @@
 
 /**
  * s_shell - carries out shell coomand operations
- *
+ * Description: This function feeds main
  * Return: On success, 0
  * On error, -1. errno is set appropriately
  */
