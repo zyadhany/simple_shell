@@ -82,6 +82,7 @@ void _puts(char *str);
 void print_int(int n);
 
 /* List Functions */
+size_t print_list(const list_t *lis);
 size_t list_len(const list_t *lis);
 list_t *add_node(list_t **lis, char *s);
 int delete_node_at_index(list_t **lis, int k);

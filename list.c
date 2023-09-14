@@ -1,5 +1,29 @@
 #include "s_shell.h"
 
+
+/**
+ * print_list - print list
+ * @lis: given list
+ *
+ * Return: size of list.
+ */
+
+size_t print_list(const list_t *lis)
+{
+	int n = 0;
+
+	while (lis)
+	{
+		_puts(lis->str);
+		_putchar('\n');
+		n++;
+		lis = lis->next;
+	}
+
+	return (n);
+}
+
+
 /**
  * list_len - get lenght of given list.
  * @lis: given list.
