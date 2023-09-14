@@ -9,9 +9,19 @@
  */
 int _setenv(char *var, char *value)
 {
-	_puts(var);
-	_puts(value);
+	char *env_var = NULL;
 
+	_unsetenv(var);
+
+	_strcpy(&env_var, var);
+	if (!env_var)
+		return (1);
+	_appendStr(&env_var, "=");
+	_appendStr(&env_var, value);
+
+	/* add node */
+	
+	free(env_var);
 	return (0);
 }
 
@@ -22,9 +32,13 @@ int _setenv(char *var, char *value)
  */
 int _Mysetenv(void)
 {
-	
+	if (_sstrlen(info.command) != 3)
+	{
+		_puts("usage: setenv (name) (value)\n");
+		return (1);
+	}
 
-	return (0);
+	return (_setenv(info.command[1], info.command[2]));
 }
 
 /**
