@@ -10,7 +10,7 @@ int _sstrlen(char **str)
 	int n = 0;
 
 	if (str)
-		while ((*str)[n])
+		while (str[n])
 			n++;
 
 	return (n);
