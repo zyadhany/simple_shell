@@ -51,7 +51,7 @@ struct INFO
 
 	int status;
 
-	struct LIST *envp;
+	list_t *envp;
 };
 #define INFO_INIT { 1, NULL, 0, NULL, {{NULL, NULL}}, 0, NULL}
 
@@ -71,6 +71,7 @@ void command_error(char *error_massage[]);
 int _exitShell(void);
 
 /* enviroment functions */
+void set_envp(void);
 int _setenv(char *var, char *value);
 int _Mysetenv(void);
 int _unsetenv(char *var);

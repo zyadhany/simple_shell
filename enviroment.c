@@ -1,5 +1,19 @@
 #include "s_shell.h"
 
+
+/**
+ * set_envp - add envirnoment variables to the info.
+ *
+ */
+void set_envp(void)
+{
+	int i;
+
+	for (i = 0; environ[i]; i++)
+		info.envp = add_node(&info.envp, environ[i]);
+}
+
+
 /**
  * _setenv - set an inviroment variable.
  * @var: name of variabe.
@@ -20,7 +34,7 @@ int _setenv(char *var, char *value)
 	_appendStr(&env_var, value);
 
 	/* add node */
-	
+
 	free(env_var);
 	return (0);
 }
