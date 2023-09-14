@@ -15,6 +15,7 @@ int main(int argc, char *argv[])
 {
 	info.argv = argv;
 	info.argc = argc;
+	set_fuction();
 
 	signal(SIGINT, SIG_IGN);
 

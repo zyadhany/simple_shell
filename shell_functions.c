@@ -1,5 +1,23 @@
 #include "s_shell.h"
 
+/**
+ * set_fuction - set fuctions into info
+ *
+ */
+void set_fuction(void)
+{
+	info.functions[0].name = "exit";
+	info.functions[0].func = &_exitShell;
+
+	info.functions[1].name = "setenv";
+	info.functions[1].func = &_Mysetenv;
+
+	info.functions[2].name = "unsetenv";
+	info.functions[2].func = &_Myunsetenv;
+
+	info.functions[3].name = NULL;
+	info.functions[3].func = NULL;
+}
 
 
 /**
@@ -25,7 +43,6 @@ void command_error(char *error_massage[])
 
 	putchar('\n');
 }
-
 
 
 /**
@@ -63,4 +80,3 @@ int _exitShell(void)
 	freeString(info.command);
 	exit(exit_status);
 }
-

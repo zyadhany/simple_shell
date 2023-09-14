@@ -24,7 +24,6 @@ struct function
 	char *name;
 	int (*func)(void);
 };
-#define FUNCTIONS_INIT {{"exit", &_exitShell}}
 
 
 /**
@@ -42,11 +41,11 @@ struct INFO
 	int argc;
 	char **argv;
 
-	struct function functions[2];
+	struct function functions[5];
 
 	int status;
 };
-#define INFO_INIT { 1, NULL, 0, NULL, FUNCTIONS_INIT, 0}
+#define INFO_INIT { 1, NULL, 0, NULL, {{NULL, NULL}}, 0}
 
 
 
@@ -59,38 +58,40 @@ int _getEnvp(char *var);
 int path_check(char **path, char *coma);
 
 /*Shell Functions*/
+void set_fuction(void);
 void command_error(char *error_massage[]);
 int _exitShell(void);
+
+/* enviroment functions */
+int _setenv(char *var, char *value);
+int _Mysetenv(void);
+int _unsetenv(char *var);
+int _Myunsetenv(void);
 
 /*Print functions*/
 int _putchar(char c);
 void _puts(char *str);
 void print_int(int n);
 
-
-
 /* Int Functons */
 int _isInt(char *s);
 u_int64_t _stoi(char *s);
 
-
-
 /*String Functions*/
-
 /*1*/
 int _strlen(char *str);
 int str_find(char *str, char c);
 int _strcnt(char *str, char *drl);
 char **_strtok(char *str, char *drl);
 void freeString(char **str);
-
 /*2*/
 void _strcpy(char **str1, char *str2);
 int _lcp(char *str1, char *str2);
 void _appendStr(char **str1, char *str2);
 int _strcomp(char *str1, char *str2);
 void _reverse(char *s);
-
+/*3*/
+int _sstrlen(char **str);
 
 
 #endif
