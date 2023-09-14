@@ -44,7 +44,6 @@ size_t list_len(const list_t *lis)
  * @s: added element
  * Return: pointer to list
  */
-
 list_t *add_node(list_t **lis, char *s)
 {
 	list_t *tmp = malloc(sizeof(list_t)), *at = *lis;
@@ -85,7 +84,6 @@ list_t *add_node(list_t **lis, char *s)
  * @k: index of list
  * Return: pointer to list
  */
-
 int delete_node_at_index(list_t **lis, int k)
 {
 	int i = 0;
@@ -124,12 +122,9 @@ int delete_node_at_index(list_t **lis, int k)
 
 
 /**
- * free_list - free list
- * @lis: given list
- *
- * Return: free all element of list
+ * free_list - frees list
+ * @lis: list given
  */
-
 void free_list(list_t *lis)
 {
 	if (lis)
