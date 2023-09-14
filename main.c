@@ -17,8 +17,6 @@ int main(int argc, char *argv[])
 	info.argc = argc;
 	set_fuction();
 	set_envp();
-	print_list(info.envp);
-	free_list(info.envp);
 
 	signal(SIGINT, SIG_IGN);
 

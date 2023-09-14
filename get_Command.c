@@ -8,9 +8,11 @@
  */
 void _exitC(char *str)
 {
-	free(str);
 	if (isatty(fileno(stdin)))
 		_putchar('\n');
+
+	free(str);
+	FreeInfo();
 	exit(info.status);
 }
 

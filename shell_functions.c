@@ -1,5 +1,6 @@
 #include "s_shell.h"
 
+
 /**
  * set_fuction - set fuctions into info
  *
@@ -77,6 +78,17 @@ int _exitShell(void)
 		exit_status = _stoi(status) % 256;
 	}
 
-	freeString(info.command);
+	FreeInfo();
 	exit(exit_status);
+}
+
+
+/**
+ * FreeInfo - free all alocated memory in info.
+ *
+ */
+void FreeInfo(void)
+{
+	freeString(info.command);
+	free_list(info.envp);
 }

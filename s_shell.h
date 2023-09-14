@@ -66,6 +66,7 @@ int _getEnvp(char *var);
 int path_check(char **path, char *coma);
 
 /*Shell Functions*/
+void FreeInfo(void);
 void set_fuction(void);
 void command_error(char *error_massage[]);
 int _exitShell(void);
