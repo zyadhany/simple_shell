@@ -27,7 +27,7 @@ void _strcpy(char **str1, char *str2)
 /**
  * _lcp - computes the longest common prefix between 2 strings
  * @str1: first string to consider
- * @str2: second string
+ * @str2: second string to consider
  * Return: integer equivalent of lcp
  */
 int _lcp(char *str1, char *str2)
