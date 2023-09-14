@@ -103,7 +103,7 @@ int _strcomp(char *str1, char *str2)
 
 /**
  * _reverse - reverses a given string;
- * @s: string to be reversed
+ * @s: string to reverse
  */
 void _reverse(char *s)
 {
