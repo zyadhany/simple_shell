@@ -91,7 +91,7 @@ list_t *add_node(list_t **lis, char *s);
 int delete_node_at_index(list_t **lis, int k);
 void free_list(list_t *lis);
 /*2*/
-char *get_node(listint_t *lis, int k);
+char *get_node(list_t *lis, int k);
 
 /* Int Functons */
 int _isInt(char *s);

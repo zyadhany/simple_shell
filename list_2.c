@@ -9,7 +9,7 @@
  * Return: value of the node.
  */
 
-char *get_node(listint_t *lis, int k)
+char *get_node(list_t *lis, int k)
 {
 
 	int i = 0;
@@ -19,7 +19,7 @@ char *get_node(listint_t *lis, int k)
 		if (!lis)
 			return (NULL);
 		if (i == k)
-			return (lis);
+			return (lis->str);
 		lis = lis->next;
 	}
 

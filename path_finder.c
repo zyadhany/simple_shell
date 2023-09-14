@@ -17,7 +17,7 @@ int Get_path(char **command)
 	if (index == -1)
 		return (1);
 
-	path = _strtok(environ[index], dlm);
+	path = _strtok(get_node(info.envp, index), dlm);
 	_strcpy(&path[0], *command);
 
 	n = path_check(path, *command);
