@@ -55,13 +55,14 @@ size_t list_len(const list_t *lis)
 
 list_t *add_node(list_t **lis, char *s)
 {
+	list_t *tmp = malloc(sizeof(list_t)), *at = *lis;
 
-	list_t *tmp = malloc(sizeof(list_t));
 
 	if (!tmp)
 		return (NULL);
 
 	_strcpy(&tmp->str, s);
+	tmp->next = NULL;
 
 	if (tmp->str == NULL)
 	{
@@ -69,9 +70,18 @@ list_t *add_node(list_t **lis, char *s)
 		return (NULL);
 	}
 
-	tmp->next = *lis;
+	if (!*lis)
+	{
+		*lis = tmp;
+		return (*lis);
+	}
 
-	*lis = tmp;
+	while (at->next)
+	{
+		at = at->next;
+	}
+
+	at->next = tmp;
 
 	return (*lis);
 }
