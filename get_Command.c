@@ -1,6 +1,5 @@
 #include "s_shell.h"
 
-
 /**
  * _exitC - exit code on error
  * @str: string to free
@@ -45,4 +44,3 @@ char **get_Command(void)
 	free(input);
 	return (command);
 }
-

@@ -1,7 +1,7 @@
 #include "s_shell.h"
 
 /**
- * _isInt - check whether a string is an integer or not
+ * _isInt - checks if a string contains integer or not
  * @s: string to check
  * Return: 1 if integer, 0 otherwise
  */
