@@ -7,13 +7,15 @@ Zyad Hany Hany
 Sheriff Oladimeji
 
 ------------------
-DESCRIPTION:
+ABOUT S_SHELL
 ------------------
 Code compilation: gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
 
-S_SHELL inteprets command with its arguments/flags, if it exits.
+S_SHELL inteprets command with its arguments/flags, if it exits
 
 When command does not exist, the corresponding error is displayed
+
+Code is written with respect to Betty style
 
 -------------------
 ALLOWED FUNCTIONS
