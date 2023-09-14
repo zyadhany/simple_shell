@@ -1,10 +1,9 @@
 #include "s_shell.h"
 
 /**
- * _isInt - check if string is int or no.
- * @s: string to check.
- *
- * Return: 1 if it is int, 0 otherwise.
+ * _isInt - check whether a string is an integer or not
+ * @s: string to check
+ * Return: 1 if integer, 0 otherwise
  */
 int _isInt(char *s)
 {
@@ -22,9 +21,8 @@ int _isInt(char *s)
 
 
 /**
- * _stoi - convert string to int.
- * @s: string to convert.
- *
+ * _stoi - convert string to integer
+ * @s: string to convert
  * Return: int represent string after convert.
  */
 u_int64_t _stoi(char *s)

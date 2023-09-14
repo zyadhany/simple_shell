@@ -2,7 +2,7 @@
 
 
 /**
- * set_envp - add envirnoment variables to the info.
+ * set_envp - add envirnoment variables to info structure
  *
  */
 void set_envp(void)
@@ -15,11 +15,11 @@ void set_envp(void)
 
 
 /**
- * _setenv - set an inviroment variable.
- * @var: name of variabe.
- * @value: value of variable.
+ * _setenv - set an inviroment variable
+ * @var: name of variabe
+ * @value: value of variable
  *
- * Return: 0 at sucess, 1 fail.
+ * Return: 0 on sucess, 1 on failure
  */
 int _setenv(char *var, char *value)
 {
@@ -40,9 +40,8 @@ int _setenv(char *var, char *value)
 }
 
 /**
- * _Mysetenv - set an inviroment variable
- *
- * Return: 0 at sucess, 1 fail.
+ * _Mysetenv - set an enviroment variable
+ * Return: 0 on sucess, 1 on failure
  */
 int _Mysetenv(void)
 {
@@ -56,10 +55,9 @@ int _Mysetenv(void)
 }
 
 /**
- * _unsetenv - remove an inviroment variable.
- * @var: name of variabe.
- *
- * Return: 0 at sucess, 1 fail.
+ * _unsetenv - remove an enviroment variable
+ * @var: name of variabe
+ * Return: 0 on sucess, 1 on failure
  */
 int _unsetenv(char *var)
 {
@@ -69,9 +67,8 @@ int _unsetenv(char *var)
 }
 
 /**
- * _Myunsetenv - remove an inviroment variable.
- *
- * Return: 0 at sucess, 1 fail.
+ * _Myunsetenv - remove an enviroment variable
+ * Return: 0 on sucess, 1 on failure
  */
 int _Myunsetenv(void)
 {
