@@ -5,7 +5,7 @@
  * main - Entry point
  * @argc: number of argument
  * @argv: array of argument
- *
+ * Description: Where all the shell action plays out
  * Return: 0 On success
  */
 int main(int argc, char *argv[])

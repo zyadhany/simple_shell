@@ -3,7 +3,7 @@
 /**
  * Get_path - Replaces command with its full path
  * @command: command to get path for
- * Return: On success 0. On error, 1.
+ * Return: On success 0. On error, 1
  */
 int Get_path(char **command)
 {
@@ -36,7 +36,7 @@ int Get_path(char **command)
 
 
 /**
- * path_check - Check which of the paths is valid
+ * path_check - checks which of the paths is valid
  * @path: array of paths
  * @command: command to look for
  * Return: index of valid path. On error, -1.

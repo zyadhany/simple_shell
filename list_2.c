@@ -2,16 +2,14 @@
 
 
 /**
- * get_node - get value of node at given index
- * @lis: given list
- * @k: index of list
- *
- * Return: value of the node.
+ * get_node - gets value of node at a given index
+ * @lis: list given
+ * @k: index of of node in list
+ * Return: value of the node
  */
 
 char *get_node(list_t *lis, int k)
 {
-
 	int i = 0;
 
 	for (i = 0; i <= k; i++)

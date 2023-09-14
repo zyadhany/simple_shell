@@ -2,7 +2,7 @@
 
 /**
  * s_shell - carries out shell coomand operations
- *
+ * Description: This function feeds main
  * Return: On success, 0
  * On error, -1. errno is set appropriately
  */
@@ -17,7 +17,6 @@ int s_shell(void)
 
 	if (info.command)
 		info.status = execute_Command();
-
 
 	freeString(info.command);
 	return (0);

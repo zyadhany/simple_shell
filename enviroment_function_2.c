@@ -15,11 +15,10 @@ int _envp(void)
 	return (0);
 }
 
-
 /**
- * _getEnvp - get the index of enviroment variable
+ * _getEnvp - gets the index of enviroment variable
  * @var: variable to look at
- * Return: index of variable. On error, -1.
+ * Return: index of variable. On error, -1
  */
 int _getEnvp(char *var)
 {

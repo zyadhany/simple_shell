@@ -1,13 +1,10 @@
 #include "s_shell.h"
 
-
 /**
- * print_list - print list
- * @lis: given list
- *
- * Return: size of list.
+ * print_list - prints a list
+ * @lis: list given
+ * Return: size of list
  */
-
 size_t print_list(const list_t *lis)
 {
 	int n = 0;
@@ -23,14 +20,11 @@ size_t print_list(const list_t *lis)
 	return (n);
 }
 
-
 /**
- * list_len - get lenght of given list.
- * @lis: given list.
- *
- * Return: size of list.
+ * list_len - gets the length of a given list
+ * @lis: list given
+ * Return: size of list
  */
-
 size_t list_len(const list_t *lis)
 {
 	int n = 0;
@@ -44,15 +38,12 @@ size_t list_len(const list_t *lis)
 	return (n);
 }
 
-
 /**
- * add_node - add node to the list.
- * @lis: given list.
- * @s: added element.
- *
- * Return: pointer to list.
+ * add_node - adds a new node to a given list
+ * @lis: list given
+ * @s: added element
+ * Return: pointer to list
  */
-
 list_t *add_node(list_t **lis, char *s)
 {
 	list_t *tmp = malloc(sizeof(list_t)), *at = *lis;
@@ -86,15 +77,13 @@ list_t *add_node(list_t **lis, char *s)
 	return (*lis);
 }
 
-
 /**
- * delete_node_at_index - delete index of node in list
- * @lis: given list
+ * delete_node_at_index - deletes node 
+ * at a specified index in list
+ * @lis: list given
  * @k: index of list
- *
- * Return: pointer to list.
+ * Return: pointer to list
  */
-
 int delete_node_at_index(list_t **lis, int k)
 {
 	int i = 0;
@@ -131,14 +120,10 @@ int delete_node_at_index(list_t **lis, int k)
 	return (1);
 }
 
-
 /**
- * free_list - free list
- * @lis: given list
- *
- * Return: free all element of list
+ * free_list - frees list
+ * @lis: list given
  */
-
 void free_list(list_t *lis)
 {
 	if (lis)
