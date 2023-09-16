@@ -13,7 +13,7 @@ int s_shell(void)
 	if (isatty(fileno(stdin)))
 		_puts(PROMPT);
 
-	info.command = get_Command();
+	get_Command();
 
 	if (info.command)
 		info.status = execute_Command();

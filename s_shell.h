@@ -45,7 +45,10 @@ struct INFO
 
 	int argc;
 	char **argv;
+
+	char *input;
 	char **command;
+	char ***commands_To_run;
 
 	int buffer_index;
 	char *buffer;
@@ -56,16 +59,18 @@ struct INFO
 
 	int exit;
 };
-#define INFO_INIT { 1, 0, 0, NULL, NULL, 0, NULL, {{NULL, NULL}}, NULL, 0}
 
 
 
 /*Custom Functions*/
 int s_shell(void);
-char **get_Command(void);
 int execute_Command(void);
 int Get_path(char **coma);
 int path_check(char **path, char *coma);
+
+/* Geting Command Functions*/
+int **get_Command(void);
+int get_input(void);
 
 /*Shell Functions*/
 /*1*/
@@ -126,6 +131,7 @@ int _strcomp(char *str1, char *str2);
 void _reverse(char *s);
 /*3*/
 int _sstrlen(char **str);
+void free_2d_String(char ***str);
 
 
 #endif

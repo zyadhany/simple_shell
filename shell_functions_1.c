@@ -2,7 +2,7 @@
 
 
 int set_info(void);
-struct INFO info = INFO_INIT;
+struct INFO info;
 
 /**
  * set_info - set up info.
@@ -12,6 +12,16 @@ struct INFO info = INFO_INIT;
 int set_info(void)
 {
 	int stats = 0;
+
+	info.command_count = 1;
+	info.exit = 0;
+	info.status = info.argc = info.buffer_index = 0;
+	info.argv = info.command = NULL;
+	info.commands_To_run = NULL;
+	info.input = info.buffer = NULL;
+	info.envp = NULL;
+	info.functions[0].name = NULL;
+	info.functions[1].func = NULL;
 
 	stats += set_fuction();
 	stats += set_envp();
@@ -103,6 +113,7 @@ void command_error(char *error_massage[])
  */
 void FreeInfo(void)
 {
+	free(info.input);
 	free(info.buffer);
 	freeString(info.command);
 	free_list(info.envp);

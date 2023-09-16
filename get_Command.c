@@ -1,6 +1,39 @@
 #include "s_shell.h"
 
 
+/**
+ * get_input - gets input from user
+ * 
+ * Return: 0 at sucess, -1 fail.
+ */
+int get_input(void)
+{
+	int n, len;
+
+	n = _getline(&info.input, &len, 0);
+
+	if (n == -1)
+		_exitS();
+
+	return (0);
+}
+
+/**
+ * get_input - gets input from user
+ * 
+ * Return: 0 at sucess, -1 fail.
+ */
+int break_command(void)
+{
+	int n, len;
+
+	n = _getline(&info.input, &len, 0);
+
+	if (n == -1)
+		_exitS();
+
+	return (0);
+}
 
 /**
  * get_Command - gets input from user
@@ -9,30 +42,21 @@
  *
  * Return: array of strings.
  */
-char **get_Command(void)
+int **get_Command(void)
 {
-	int n, len;
-	char *input = NULL, dlm[3] = " \n\0";
+	char dlm[3] = " \n\0";
 	char **command = NULL;
 
-	n = _getline(&input, &len, 0);
+	get_input();
 
-	if (n == -1)
+	if (_strcnt(info.input, dlm))
 	{
-		free(input);
-		_exitS();
-	}
-
-	if (_strcnt(input, dlm))
-	{
-		command = _strtok(input, dlm);
+		command = _strtok(info.input, dlm);
 		if (!command)
-		{
-			free(input);
 			_exitS();
-		}
 	}
 
-	free(input);
-	return (command);
+	info.command = command;
+	return (0);
 }
+

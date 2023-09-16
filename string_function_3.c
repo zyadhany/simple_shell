@@ -15,3 +15,21 @@ int _sstrlen(char **str)
 
 	return (n);
 }
+
+/**
+ * free_2d_String - frees an 2d array of strings
+ * @str: array to free
+ *
+ */
+void free_2d_String(char ***str)
+{
+	int i = 0;
+
+	if (!str)
+		return;
+
+	while (str[i])
+		freeString(str[i++]);
+	
+	free(str);
+}
