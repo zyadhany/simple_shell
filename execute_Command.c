@@ -8,7 +8,7 @@
 int execute_Command(void)
 {
 	int id, i;
-	char *error_message[3] = {"No such file or directory", NULL};
+	char *error_message[3] = {"not found", NULL};
 
 	for (i = 0; info.functions[i].name; i++)
 		if (_strcomp(info.command[0], info.functions[i].name) == 0)
