@@ -32,8 +32,12 @@ int execute_Command(void)
 
 
 	if (id == 0)
+	{
 		execve(info.command[0], info.command, environ);
-
+		info.status = 1;
+		info.exit = 1;
+		_exitS();
+	}
 	waitpid(id, &info.status, 0);
 
 	return (WEXITSTATUS(info.status));
