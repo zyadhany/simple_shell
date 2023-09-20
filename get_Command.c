@@ -3,7 +3,7 @@
 
 /**
  * get_input - gets input from user
- * 
+ *
  * Return: 0 at sucess, -1 fail.
  */
 int get_input(void)
@@ -19,19 +19,82 @@ int get_input(void)
 }
 
 /**
- * get_input - gets input from user
- * 
+ * check_comments - chechk if there is comment or no.
+ * @str: array of strting to check.
+ *
+ * Return: 1 if comment, 0 if no.
+ */
+int check_comments(char **str)
+{
+	int i;
+
+	if (!str)
+		return (0);
+
+	for (i = 0; str[i]; i++)
+	{
+		if (str[i][0] == '#')
+		{
+			while (str[i])
+			{
+				free(str[i]);
+				str[i] = NULL;
+				i++;
+			}
+			return (1);
+		}
+
+	}
+
+	return (0);
+}
+
+/**
+ * break_command - break command into several commands.
+ *
  * Return: 0 at sucess, -1 fail.
  */
 int break_command(void)
 {
-	int n, len;
+	int n, i, j;
+	char dlm1[3] = ";\n\0";
+	char dlm2[3] = " \n\0";
 
-	n = _getline(&info.input, &len, 0);
+	if (!_strcnt(info.input, dlm2))
+		return (-1);
 
-	if (n == -1)
+	n = _strcnt(info.input, dlm1);
+
+	info.command = _strtok(info.input, dlm1);
+	if (!info.command)
 		_exitS();
 
+	info.commands_To_run = malloc(sizeof(char **) * (1 + n));
+
+	for (i = 0; i <= n; i++)
+		info.commands_To_run[i] = NULL;
+
+	for (i = 0; i < n; i++)
+	{
+		info.commands_To_run[i] = _strtok(info.command[i], dlm2);
+		if (!info.commands_To_run[i])
+			_exitS();
+		if (check_comments(info.commands_To_run[i]))
+		{
+			if (!info.commands_To_run[i][0])
+			{
+				freeString(info.commands_To_run[i]);
+				info.commands_To_run[i] = NULL;
+			}
+			break;
+		}
+		for (j = 0; info.commands_To_run[i][j]; j++)
+			if (replace_to_env(&info.commands_To_run[i][j]) == -1)
+				_exitS();
+	}
+
+	freeString(info.command);
+	info.command = NULL;
 	return (0);
 }
 
@@ -44,19 +107,8 @@ int break_command(void)
  */
 int **get_Command(void)
 {
-	char dlm[3] = " \n\0";
-	char **command = NULL;
-
 	get_input();
+	break_command();
 
-	if (_strcnt(info.input, dlm))
-	{
-		command = _strtok(info.input, dlm);
-		if (!command)
-			_exitS();
-	}
-
-	info.command = command;
 	return (0);
 }
-

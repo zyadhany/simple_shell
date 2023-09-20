@@ -52,6 +52,7 @@ list_t *add_node(list_t **lis, char *s)
 		return (NULL);
 
 	tmp->str = NULL;
+	tmp->str2 = NULL;
 	_strcpy(&tmp->str, s);
 	tmp->next = NULL;
 
@@ -78,7 +79,7 @@ list_t *add_node(list_t **lis, char *s)
 }
 
 /**
- * delete_node_at_index - deletes node 
+ * delete_node_at_index - deletes node
  * at a specified index in list
  * @lis: list given
  * @k: index of list
@@ -95,6 +96,7 @@ int delete_node_at_index(list_t **lis, int k)
 			return (-1);
 		tmp = X->next;
 		free(X->str);
+		free(X->str2);
 		free(X);
 		*lis = tmp;
 		return (1);
@@ -114,6 +116,7 @@ int delete_node_at_index(list_t **lis, int k)
 
 	tmp = X->next->next;
 	free(X->next->str);
+	free(X->next->str2);
 	free(X->next);
 	X->next = tmp;
 
@@ -130,6 +133,7 @@ void free_list(list_t *lis)
 	{
 		free_list(lis->next);
 		free(lis->str);
+		free(lis->str2);
 		free(lis);
 	}
 }

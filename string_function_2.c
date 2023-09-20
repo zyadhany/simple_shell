@@ -4,24 +4,32 @@
  * _strcpy - copies a certain string into another
  * @str1: string to copy at
  * @str2: string to copy from
+ *
+ * Return: 0 at sucess -1 at filed.
  */
-void _strcpy(char **str1, char *str2)
+int _strcpy(char **str1, char *str2)
 {
 	int n, i;
 
 	n = _strlen(str2);
 
 	if (!str1)
-		return;
+		return (-1);
+
+	if (*str1 == str2)
+		return (0);
 
 	free(*str1);
 	*str1 = malloc(sizeof(char) * (n + 1));
 
 	if (!(*str1))
-		return;
+		return (-1);
 
-	for (i = 0; i <= n; i++)
+	for (i = 0; i < n; i++)
 		(*str1)[i] = str2[i];
+
+	(*str1)[n] = '\0';
+	return (0);
 }
 
 /**

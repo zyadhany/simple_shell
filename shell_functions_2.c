@@ -1,5 +1,30 @@
 #include "s_shell.h"
 
+/**
+ * _getcwd - change current director.
+ * @str: string to put path.
+ *
+ * Return: 0 at sucess -1 at filed
+ */
+int _getcwd(char **str)
+{
+	size_t size = 0;
+	char *buff = NULL;
+
+	if (!str)
+		return (-1);
+
+	*str = getcwd(buff, size);
+
+	if (!(*str))
+	{
+		free(*str);
+		*str = NULL;
+		return (-1);
+	}
+
+	return (0);
+}
 
 /**
  * _cd - change current director
@@ -8,7 +33,46 @@
  */
 int _cd(void)
 {
-	return (1);
+	int len, status;
+	char *path = NULL,  *prev = NULL;
+
+	if (_getcwd(&prev) == -1)
+		return (1);
+	len = _sstrlen(info.command);
+	if (len == 1)
+		status = chdir(env_val("HOME"));
+	else if (_strcomp("-", info.command[1]) == 0)
+	{
+		status = chdir(info.parent_dir);
+		_puts(info.parent_dir);
+		_putchar('\n');
+	}
+	else
+		status = chdir(info.command[1]);
+	if (!status)
+	{
+		_strcpy(&info.parent_dir, prev);
+		free(prev);
+	}
+	if (!status)
+	{
+		if (_getcwd(&path) == -1)
+			return (1);
+		_setenv("PWD", path);
+		free(path);
+	}
+	else
+	{
+		_puts(info.argv[0]);
+		_puts(": ");
+		print_int(info.command_count);
+		_puts(": ");
+		_puts(info.command[0]);
+		_puts(": can't cd to ");
+		_puts(info.command[1]);
+		_putchar('\n');
+	}
+	return (status);
 }
 
 
@@ -23,7 +87,6 @@ int Buff_Flush(void)
 	return (0);
 }
 
-
 /**
  * _exitS - exit code on error
  * Return: Nothing
@@ -35,7 +98,6 @@ void _exitS(void)
 	FreeInfo();
 	exit(info.status);
 }
-
 
 /**
  * _exitShell - exit from shell
@@ -70,5 +132,3 @@ int _exitShell(void)
 	_exitS();
 	return (0);
 }
-
-

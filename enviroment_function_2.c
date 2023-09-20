@@ -1,18 +1,27 @@
 #include "s_shell.h"
 
 /**
- * _envp - print the enviroment variables
+ * env_val - get value of enviroment variable.
+ * @var: enviroment variable to find it's value.
  *
- * Return: 0 at sucess 1 at filed
+ * Return: string represent the value of varible, return NULL if not found.
  */
-int _envp(void)
+char *env_val(char *var)
 {
-	if (_sstrlen(info.command) != 1)
-		return (1);
+	int index, n;
+	char *val = NULL, *envar = NULL;
 
-	print_list(info.envp);
+	index = _getEnvp(var);
 
-	return (0);
+	if (index == -1)
+		return (NULL);
+
+	n = _strlen(var);
+	envar = get_node(info.envp, index);
+
+	val = envar + n + 1;
+
+	return (val);
 }
 
 /**
@@ -40,3 +49,17 @@ int _getEnvp(char *var)
 	return (-1);
 }
 
+/**
+ * _envp - print the enviroment variables
+ *
+ * Return: 0 at sucess 1 at filed
+ */
+int _envp(void)
+{
+	if (_sstrlen(info.command) != 1)
+		return (1);
+
+	print_list(info.envp);
+
+	return (0);
+}

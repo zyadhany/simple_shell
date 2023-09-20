@@ -8,16 +8,25 @@
  */
 int s_shell(void)
 {
+	int i;
+
 	info.command = NULL;
+	info.commands_To_run = NULL;
 
 	if (isatty(fileno(stdin)))
 		_puts(PROMPT);
 
 	get_Command();
 
-	if (info.command)
-		info.status = execute_Command();
+	if (!info.commands_To_run)
+		return (0);
 
-	freeString(info.command);
+	for (i = 0; info.commands_To_run[i]; i++)
+	{
+		info.command = info.commands_To_run[i];
+		info.status = execute_Command();
+	}
+
+	free_2d_String(info.commands_To_run);
 	return (0);
 }

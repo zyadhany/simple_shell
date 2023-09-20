@@ -30,7 +30,7 @@ int str_find(char *str, char c)
 
 	for (i = 0; i <= n; i++)
 		if (str[i] == c)
-			return (1);
+			return (i + 1);
 
 	return (0);
 }

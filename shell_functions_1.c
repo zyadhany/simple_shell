@@ -19,10 +19,12 @@ int set_info(void)
 	info.argv = info.command = NULL;
 	info.commands_To_run = NULL;
 	info.input = info.buffer = NULL;
-	info.envp = NULL;
+	info.envp = info.alias = NULL;
 	info.functions[0].name = NULL;
 	info.functions[1].func = NULL;
 
+
+	stats += _getcwd(&info.parent_dir);
 	stats += set_fuction();
 	stats += set_envp();
 	stats += set_buffer();
@@ -56,8 +58,11 @@ int set_fuction(void)
 	info.functions[4].name = "unsetenv";
 	info.functions[4].func = &_Myunsetenv;
 
-	info.functions[5].name = NULL;
-	info.functions[5].func = NULL;
+	info.functions[5].name = "alias";
+	info.functions[5].func = &alias_shell;
+
+	info.functions[6].name = NULL;
+	info.functions[6].func = NULL;
 
 	return (0);
 }
@@ -105,8 +110,6 @@ void command_error(char *error_massage[])
 	putchar('\n');
 }
 
-
-
 /**
  * FreeInfo - free all alocated memory in info.
  *
@@ -115,6 +118,10 @@ void FreeInfo(void)
 {
 	free(info.input);
 	free(info.buffer);
-	freeString(info.command);
+	free(info.parent_dir);
 	free_list(info.envp);
+	free_list(info.alias);
+	free_2d_String(info.commands_To_run);
+	if (!info.exit)
+		freeString(info.command);
 }

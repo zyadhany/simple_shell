@@ -19,6 +19,35 @@ int _isInt(char *s)
 	return (1);
 }
 
+/**
+ * int_to_string - convert from int to string
+ * @n: integer to convert
+ *
+ * Return: string represent an int.
+ */
+char *int_to_string(int n)
+{
+	int i;
+	static char s[32];
+
+	if (n == 0)
+	{
+		s[0] = '0', i = 1;
+	}
+	else
+	{
+		for (i = 0; n; i++)
+		{
+			s[i] = '0' + n % 10;
+			n /= 10;
+		}
+	}
+
+	s[i] = '\0';
+
+	_reverse(s);
+	return (s);
+}
 
 /**
  * _stoi - convert string to integer
