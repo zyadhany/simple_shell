@@ -61,6 +61,7 @@ int _cd(void)
 		if (_getcwd(&path) == -1)
 			return (1);
 		_setenv("PWD", path);
+		info.enviroment_changed = 1;
 		free(path);
 	}
 	else
