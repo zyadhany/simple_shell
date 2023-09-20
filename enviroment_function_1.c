@@ -40,6 +40,8 @@ int _setenv(char *var, char *value)
 		free(env_var);
 		return (1);
 	}
+
+	info.enviroment_changed = 1;
 	free(env_var);
 
 	return (0);
@@ -73,6 +75,7 @@ int _unsetenv(char *var)
 		return (1);
 
 	delete_node_at_index(&info.envp, index);
+	info.enviroment_changed = 1;
 
 	return (0);
 }

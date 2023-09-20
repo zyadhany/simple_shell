@@ -15,15 +15,14 @@ int set_info(void)
 
 	info.STD = 2;
 	info.command_count = 1;
-	info.exit = 0;
+	info.exit = info.enviroment_changed = 0;
 	info.status = info.argc = info.buffer_index = 0;
-	info.argv = info.command = NULL;
+	info.argv = info.command = info.environ = NULL;
 	info.commands_To_run = NULL;
 	info.input = info.buffer = NULL;
 	info.envp = info.alias = NULL;
 	info.functions[0].name = NULL;
 	info.functions[1].func = NULL;
-
 
 	stats += _getcwd(&info.parent_dir);
 	stats += set_fuction();
@@ -123,6 +122,7 @@ void FreeInfo(void)
 	free_list(info.envp);
 	free_list(info.alias);
 	free_2d_String(info.commands_To_run);
+	freeString(info.environ);
 	if (!info.exit)
 		freeString(info.command);
 }

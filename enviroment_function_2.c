@@ -1,6 +1,23 @@
 #include "s_shell.h"
 
 /**
+ * get_environ - sycn with envirment list.
+ *
+ * Return: array of strings represent enviromentt variables.
+ */
+char **get_environ(void)
+{
+	if (!info.environ || info.enviroment_changed)
+	{
+		freeString(info.environ);
+		info.environ = list_to_strings(info.envp);
+		info.enviroment_changed = 0;
+	}
+
+	return (info.environ);
+}
+
+/**
  * env_val - get value of enviroment variable.
  * @var: enviroment variable to find it's value.
  *

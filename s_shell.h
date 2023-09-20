@@ -46,14 +46,16 @@ struct function
 /**
  * struct INFO - structure of command details.
  * @command_count: position of command entry.
+ * @STD: stdout or stderr
  * @status: a
  * @argc: a
  * @argv: name of the program.
- * @STD: stdout or stderr
  * @parent_dir: a
  * @input: a
  * @command: command entered.
  * @commands_To_run:  a
+ * @enviroment_changed: a
+ * @environ: a
  * @buffer_index: a
  * @buffer: a
  * @functions: a
@@ -75,6 +77,9 @@ struct INFO
 	char *input;
 	char **command;
 	char ***commands_To_run;
+
+	int enviroment_changed;
+	char **environ;
 
 	int buffer_index;
 	char *buffer;
@@ -124,6 +129,7 @@ int _Mysetenv(void);
 int _unsetenv(char *var);
 int _Myunsetenv(void);
 /*2*/
+char **get_environ(void);
 char *env_val(char *str);
 int _getEnvp(char *var);
 int _envp(void);
@@ -155,6 +161,7 @@ list_t *add_node(list_t **lis, char *str);
 int delete_node_at_index(list_t **lis, int k);
 void free_list(list_t *lis);
 /*2*/
+char **list_to_strings(list_t *lis);
 list_t *add_node2(list_t **lis, char *str1, char *str2);
 list_t *get_node_elem(list_t *lis, char *str);
 int get_node_index(list_t *lis, char *str);

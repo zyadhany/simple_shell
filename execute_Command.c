@@ -33,7 +33,7 @@ int execute_Command(void)
 
 	if (id == 0)
 	{
-		execve(info.command[0], info.command, environ);
+		execve(info.command[0], info.command, get_environ());
 		info.status = 1;
 		info.exit = 1;
 		_exitS();

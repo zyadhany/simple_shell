@@ -1,6 +1,41 @@
 #include "s_shell.h"
 
 /**
+ * list_to_strings - convert list to string.
+ * @lis: list given
+ * Return: pointer to array of string.
+ */
+char **list_to_strings(list_t *lis)
+{
+	int n, i;
+	char **str = NULL;
+	list_t *tmp = lis;
+
+	if (!lis)
+		return (NULL);
+
+	n = list_len(tmp);
+
+	str = malloc(sizeof(char *) * (n + 1));
+
+	for (i = 0; i <= n; i++)
+		str[i] = NULL;
+
+	for (i = 0; i < n; i++)
+	{
+		_strcpy(&(str[i]), tmp->str);
+		if (!str[i])
+		{
+			freeString(str);
+			return (NULL);
+		}
+		tmp = tmp->next;
+	}
+
+	return (str);
+}
+
+/**
  * add_node2 - adds a new node to a given list
  * @lis: list given
  * @str1: first added element
