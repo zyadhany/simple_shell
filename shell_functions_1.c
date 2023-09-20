@@ -108,7 +108,7 @@ void command_error(char *error_massage[])
 		_puts(error_massage[i]);
 	}
 
-	putchar('\n');
+	_putchar('\n');
 }
 
 /**
