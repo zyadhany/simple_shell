@@ -59,7 +59,9 @@ int _envp(void)
 	if (_sstrlen(info.command) != 1)
 		return (1);
 
+	info.STD = 1;
 	print_list(info.envp);
+	info.STD = 2;
 
 	return (0);
 }
