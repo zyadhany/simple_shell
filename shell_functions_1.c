@@ -13,6 +13,7 @@ int set_info(void)
 {
 	int stats = 0;
 
+	info.STD = 2;
 	info.command_count = 1;
 	info.exit = 0;
 	info.status = info.argc = info.buffer_index = 0;
