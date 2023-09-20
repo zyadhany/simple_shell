@@ -64,6 +64,7 @@ struct INFO
 {
 	u_int64_t command_count;
 	int status;
+	int STD;
 
 	int argc;
 	char **argv;
