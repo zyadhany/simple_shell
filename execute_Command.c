@@ -19,7 +19,7 @@ int execute_Command(void)
 	if (Get_path(&info.command[0]))
 	{
 		command_error(error_message);
-		return (127);
+		return (2);
 	}
 
 	id = fork();
