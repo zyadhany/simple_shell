@@ -49,6 +49,7 @@ struct function
  * @status: a
  * @argc: a
  * @argv: name of the program.
+ * @STD: stdout or stderr
  * @parent_dir: a
  * @input: a
  * @command: command entered.
