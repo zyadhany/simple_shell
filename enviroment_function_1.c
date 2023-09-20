@@ -86,7 +86,8 @@ int _Myunsetenv(void)
 	int i;
 
 	for (i = 1; info.command[i]; i++)
-		_unsetenv(info.command[i]);
+		if (_unsetenv(info.command[i]))
+			_puts("variable not found\n");
 
 	return (0);
 }
