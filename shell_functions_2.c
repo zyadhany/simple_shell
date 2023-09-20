@@ -44,8 +44,10 @@ int _cd(void)
 	else if (_strcomp("-", info.command[1]) == 0)
 	{
 		status = chdir(info.parent_dir);
+		info.STD = 1;
 		_puts(info.parent_dir);
 		_putchar('\n');
+		info.STD = 2;
 	}
 	else
 		status = chdir(info.command[1]);
@@ -62,16 +64,8 @@ int _cd(void)
 		free(path);
 	}
 	else
-	{
-		_puts(info.argv[0]);
-		_puts(": ");
-		print_int(info.command_count);
-		_puts(": ");
-		_puts(info.command[0]);
-		_puts(": can't cd to ");
-		_puts(info.command[1]);
-		_putchar('\n');
-	}
+		cd_error_massage();
+
 	return (status);
 }
 

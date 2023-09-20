@@ -113,6 +113,8 @@ int _cd(void);
 int Buff_Flush(void);
 void _exitS(void);
 int _exitShell(void);
+/*3*/
+void cd_error_massage(void);
 
 /* enviroment functions */
 /*1*/
