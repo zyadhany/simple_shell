@@ -24,6 +24,13 @@ int execute_Command(void)
 
 	id = fork();
 
+	if (id == -1)
+	{
+		info.status = 1;
+		_exitS();
+	}
+
+
 	if (id == 0)
 		execve(info.command[0], info.command, environ);
 
