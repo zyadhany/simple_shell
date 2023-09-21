@@ -1,8 +1,7 @@
 #include "s_shell.h"
 
 /**
- * get_environ - sycn with envirment list.
- *
+ * get_environ - sycn with envirment list
  * Return: array of strings represent enviromentt variables.
  */
 char **get_environ(void)
@@ -19,8 +18,7 @@ char **get_environ(void)
 
 /**
  * env_val - get value of enviroment variable.
- * @var: enviroment variable to find it's value.
- *
+ * @var: enviroment variable to find it's value
  * Return: string represent the value of varible, return NULL if not found.
  */
 char *env_val(char *var)
@@ -68,7 +66,6 @@ int _getEnvp(char *var)
 
 /**
  * _envp - print the enviroment variables
- *
  * Return: 0 at sucess 1 at filed
  */
 int _envp(void)

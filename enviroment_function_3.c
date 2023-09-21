@@ -1,8 +1,8 @@
 #include "s_shell.h"
 
 /**
- * get_env_val - get value of variable start wiht $.
- * @var: given var
+ * get_env_val - get value of variable; start with $
+ * @var: given variable
  * Return: array of strings
  */
 char *get_env_val(char *var)
@@ -26,7 +26,7 @@ char *get_env_val(char *var)
 
 /**
  * _strcnt_env - counts number of strings after break
- * @str: string to break
+ * @str: broken string to count
  * Return: array of strings
  */
 int _strcnt_env(char *str)
@@ -51,7 +51,7 @@ int _strcnt_env(char *str)
 
 /**
  * _strtok_env - breaks string into several strings
- * @str: string to be break
+ * @str: string to break
  * Return: array of strings
  */
 char **_strtok_env(char *str)
@@ -91,11 +91,10 @@ char **_strtok_env(char *str)
 }
 
 /**
- * separate_to_enviroment - sprate string into sevral enviroment variable.
- * @args: 2d array to sprate at.
- * @str: string to sprate from.
- *
- * Return: 0 at sucess -1 at filed.
+ * separate_to_enviroment - sprate string into sevral enviroment variable
+ * @args: 2D array to separate at
+ * @str: string to separate from
+ * Return: 0 at sucess -1 at failed
  */
 int separate_to_enviroment(char ***args, char *str)
 {
@@ -121,10 +120,9 @@ int separate_to_enviroment(char ***args, char *str)
 }
 
 /**
- * replace_to_env - replace string with it's enviroment variable.
- * @str: string to be replaced.
- *
- * Return: 0 at sucess -1 at filed.
+ * replace_to_env - replace string with it's enviroment variable
+ * @str: string to be replaced
+ * Return: 0 at success -1 at failed
  */
 int replace_to_env(char **str)
 {
