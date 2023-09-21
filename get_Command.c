@@ -1,10 +1,8 @@
 #include "s_shell.h"
 
-
 /**
  * get_input - gets input from user
- *
- * Return: 0 at sucess, -1 fail.
+ * Return: 0 on sucess, -1 on failure
  */
 int get_input(void)
 {
@@ -19,10 +17,9 @@ int get_input(void)
 }
 
 /**
- * check_comments - chechk if there is comment or no.
- * @str: array of strting to check.
- *
- * Return: 1 if comment, 0 if no.
+ * check_comments - check if there is comment or not
+ * @str: array of strting to check
+ * Return: 1 if present, 0 if not
  */
 int check_comments(char **str)
 {
@@ -50,9 +47,8 @@ int check_comments(char **str)
 }
 
 /**
- * break_command - break command into several commands.
- *
- * Return: 0 at sucess, -1 fail.
+ * break_command - break command into several commands
+ * Return: 0 at sucess, -1 fail
  */
 int break_command(void)
 {
