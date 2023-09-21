@@ -44,16 +44,16 @@ struct function
 
 
 /**
- * struct INFO - structure of command details.
+ * struct INFO - structure of command details
  * @command_count: position of command entry
  * @STD: stdout or stderr
- * @status: a
- * @argc: a
+ * @status: exit status
+ * @argc: argument count
  * @argv: name of the program.
- * @parent_dir: a
- * @input: a
+ * @parent_dir: pointer to parent directory
+ * @input: string entered by user 
  * @command: command entered.
- * @commands_To_run:  a
+ * @commands_To_run:  what to consider in the string
  * @enviroment_changed: a
  * @environ: a
  * @buffer_index: a
