@@ -22,8 +22,7 @@ int _isInt(char *s)
 /**
  * int_to_string - convert from int to string
  * @n: integer to convert
- *
- * Return: string represent an int.
+ * Return: string represent an int
  */
 char *int_to_string(int n)
 {
