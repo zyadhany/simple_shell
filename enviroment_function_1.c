@@ -40,6 +40,8 @@ int _setenv(char *var, char *value)
 		free(env_var);
 		return (1);
 	}
+
+	info.enviroment_changed = 1;
 	free(env_var);
 
 	return (0);
@@ -53,7 +55,7 @@ int _Mysetenv(void)
 {
 	if (_sstrlen(info.command) != 3)
 	{
-		_puts("usage: setenv (name) (value)\n");
+		_puts("usage: setenv (name) (value).\n");
 		return (1);
 	}
 
@@ -73,6 +75,7 @@ int _unsetenv(char *var)
 		return (1);
 
 	delete_node_at_index(&info.envp, index);
+	info.enviroment_changed = 1;
 
 	return (0);
 }
@@ -85,8 +88,15 @@ int _Myunsetenv(void)
 {
 	int i;
 
+	if (_sstrlen(info.command) == 1)
+	{
+		_puts("Too few arguements.\n");
+		return (1);
+	}
+
 	for (i = 1; info.command[i]; i++)
-		_unsetenv(info.command[i]);
+		if (_unsetenv(info.command[i]))
+			_puts("variable not found\n");
 
 	return (0);
 }

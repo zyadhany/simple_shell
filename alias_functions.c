@@ -7,10 +7,12 @@
  */
 void put_alias(list_t *alias_element)
 {
+	info.STD = 1;
 	_puts(alias_element->str);
 	_puts("='");
 	_puts(alias_element->str2);
 	_puts("'\n");
+	info.STD = 2;
 }
 
 /**

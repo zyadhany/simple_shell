@@ -19,15 +19,26 @@ int execute_Command(void)
 	if (Get_path(&info.command[0]))
 	{
 		command_error(error_message);
-		return (2);
+		return (127);
 	}
 
 	id = fork();
 
+	if (id == -1)
+	{
+		info.status = 1;
+		_exitS();
+	}
+
+
 	if (id == 0)
-		execve(info.command[0], info.command, environ);
+	{
+		execve(info.command[0], info.command, get_environ());
+		info.status = 1;
+		info.exit = 1;
+		_exitS();
+	}
+	waitpid(id, &info.status, 0);
 
-	wait(&id);
-
-	return (0);
+	return (WEXITSTATUS(info.status));
 }
