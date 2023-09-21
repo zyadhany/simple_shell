@@ -54,14 +54,14 @@ struct function
  * @input: string entered by user 
  * @command: command entered.
  * @commands_To_run:  what to consider in the string
- * @enviroment_changed: a
- * @environ: a
- * @buffer_index: a
- * @buffer: a
- * @functions: a
- * @envp: a
- * @alias: a
- * @exit: a
+ * @enviroment_changed: change in cli environment
+ * @environ: ennvironment variable
+ * @buffer_index: position specifier in buffer
+ * @buffer: array of buffer strings
+ * @functions: pointer to functions
+ * @envp: envp command
+ * @alias: assigned alias to a line of command
+ * @exit: exit command
 */
 struct INFO
 {
