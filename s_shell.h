@@ -167,7 +167,7 @@ list_t *get_node_elem(list_t *lis, char *str);
 int get_node_index(list_t *lis, char *str);
 char *get_node(list_t *lis, int k);
 
-/* Int Functons */
+/* Integer Functons */
 int _isInt(char *s);
 char *int_to_string(int n);
 u_int64_t _stoi(char *s);
