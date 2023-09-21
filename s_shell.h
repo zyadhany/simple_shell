@@ -18,10 +18,10 @@ extern struct INFO info;
 #define BUFFER_SIZE 1024
 
 /**
- * struct List - a
- * @str: a.
- * @str2: a
- * @next: a
+ * struct List - linked list of 2 strings
+ * @str: first string
+ * @str2: second string
+ * @next: pointer to the next node
 */
 typedef struct List
 {
@@ -32,9 +32,9 @@ typedef struct List
 
 
 /**
- * struct function - a
- * @name: a.
- * @func: a
+ * struct function - function pointer structure
+ * @name: command text
+ * @func: pointer  
 */
 struct function
 {
