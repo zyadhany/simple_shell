@@ -18,10 +18,10 @@ int _sstrlen(char **str)
 
 /**
  * _strSuffix - get suffix from string from given index.
- * @str: given string.
- * @index: given index.
+ * @str: given string
+ * @index: given index
  *
- * Return: string, Null if field.
+ * Return: string, Null on failure
  */
 char *_strSuffix(char *str, int index)
 {
@@ -44,11 +44,10 @@ char *_strSuffix(char *str, int index)
 }
 
 /**
- * _strassemb - collect 2d string into string.
- * @str: given string.
- * @s: output string.
- *
-* Return: 0 at sucess -1 at filed.
+ * _strassemb - collect 2d string into string
+ * @str: given string
+ * @s: output string
+* Return: 0 on success, -1 on failure
  */
 int _strassemb(char **str, char **s)
 {

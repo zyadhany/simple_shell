@@ -1,6 +1,5 @@
 #include "s_shell.h"
 
-
 int set_info(void);
 struct INFO info;
 

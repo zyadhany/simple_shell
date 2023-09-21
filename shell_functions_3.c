@@ -1,8 +1,7 @@
 #include "s_shell.h"
 
 /**
- * cd_error_massage - print error message of cd.
- *
+ * cd_error_massage - print error message of cd
  * Return: Nothing.
  */
 void cd_error_massage(void)

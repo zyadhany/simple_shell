@@ -1,11 +1,10 @@
 #include "s_shell.h"
 
 /**
- * _strcpy - copies a certain string into another
- * @str1: string to copy at
+ * _strcpy - copies specified string into another
+ * @str1: string to copy to
  * @str2: string to copy from
- *
- * Return: 0 at sucess -1 at filed.
+ * Return: 0 on sucess -1 on failure
  */
 int _strcpy(char **str1, char *str2)
 {
@@ -110,7 +109,7 @@ int _strcomp(char *str1, char *str2)
 
 
 /**
- * _reverse - reverses a given string;
+ * _reverse - reverses a given string
  * @s: string to reverse
  */
 void _reverse(char *s)

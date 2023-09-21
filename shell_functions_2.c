@@ -1,9 +1,8 @@
 #include "s_shell.h"
 
 /**
- * _getcwd - change current director.
- * @str: string to put path.
- *
+ * _getcwd - change current director
+ * @str: string to put path
  * Return: 0 at sucess -1 at filed
  */
 int _getcwd(char **str)
@@ -28,7 +27,6 @@ int _getcwd(char **str)
 
 /**
  * _cd - change current director
- *
  * Return: 0 at sucess 1 at filed
  */
 int _cd(void)
@@ -70,10 +68,8 @@ int _cd(void)
 	return (status);
 }
 
-
 /**
  * Buff_Flush - flush the buffer
- *
  * Return: 0 at sucess 1 at filed
  */
 int Buff_Flush(void)
@@ -96,7 +92,6 @@ void _exitS(void)
 
 /**
  * _exitShell - exit from shell
- *
  * Return: 0 at sucess 2 at filed
  */
 int _exitShell(void)
