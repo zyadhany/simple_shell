@@ -1,7 +1,7 @@
 #ifndef S_SHELL
 #define S_SHELL
 
-#include <stdio.h>
+#include <unistd.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

@@ -1,6 +1,5 @@
 #include "s_shell.h"
 
-
 /**
  * main - Entry point
  * @argc: number of argument
