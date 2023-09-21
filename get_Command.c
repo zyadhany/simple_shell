@@ -98,8 +98,7 @@ int break_command(void)
  * get_Command - gets input from user
  * and separates it into several commands
  * or Command and flags/arguments
- *
- * Return: array of strings.
+ * Return: array of strings
  */
 int **get_Command(void)
 {
