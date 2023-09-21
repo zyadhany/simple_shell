@@ -1,9 +1,9 @@
 #include "s_shell.h"
 
 /**
- * list_to_strings - convert list to string.
- * @lis: list given
- * Return: pointer to array of string.
+ * list_to_strings - convert list to string
+ * @lis: given list
+ * Return: pointer to array of string
  */
 char **list_to_strings(list_t *lis)
 {
@@ -37,9 +37,9 @@ char **list_to_strings(list_t *lis)
 
 /**
  * add_node2 - adds a new node to a given list
- * @lis: list given
- * @str1: first added element
- * @str2: second added element
+ * @lis: given list
+ * @str1: first element to add
+ * @str2: second element to add
  * Return: pointer to list
  */
 list_t *add_node2(list_t **lis, char *str1, char *str2)
@@ -85,11 +85,10 @@ list_t *add_node2(list_t **lis, char *str1, char *str2)
 }
 
 /**
- * get_node_elem - get node with given value.
- * @lis: list given
- * @str: given string.
- *
- * Return: pointer to node, NULL if not exits.
+ * get_node_elem - get node with given value
+ * @lis: given list
+ * @str: given string
+ * Return: pointer to node, NULL if not exits
  */
 
 list_t *get_node_elem(list_t *lis, char *str)
@@ -105,11 +104,10 @@ list_t *get_node_elem(list_t *lis, char *str)
 }
 
 /**
- * get_node_index - gets index of node with given value.
- * @lis: list given
- * @str: given string.
- *
- * Return: index of node.
+ * get_node_index - gets index of node with given value
+ * @lis: given list
+ * @str: given string
+ * Return: index of node
  */
 
 int get_node_index(list_t *lis, char *str)
@@ -129,8 +127,8 @@ int get_node_index(list_t *lis, char *str)
 
 /**
  * get_node - gets value of node at a given index
- * @lis: list given
- * @k: index of of node in list
+ * @lis: given list
+ * @k: index of of node in specified list
  * Return: value of the node
  */
 
