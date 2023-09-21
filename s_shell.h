@@ -32,9 +32,9 @@ typedef struct List
 
 
 /**
- * struct function - function pointer structure
- * @name: command text
- * @func: pointer  
+ * struct function - structure of a function pointer
+ * @name: function name
+ * @func: pointer to function with void argument
 */
 struct function
 {
@@ -45,7 +45,7 @@ struct function
 
 /**
  * struct INFO - structure of command details.
- * @command_count: position of command entry.
+ * @command_count: position of command entry
  * @STD: stdout or stderr
  * @status: a
  * @argc: a
